@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles-lab.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="head">
+            <nav class="nav">
+                <button id="taskButton_task1" onclick="selectTask('task1')">Опис предметного середовища</button>
+                <button id="taskButton_task2" onclick="selectTask('task2')">Структура документа, Git</button>
+                <button id="taskButton_task3" onclick="selectTask('task3')">Головна сторінка</button>
+                <button id="taskButton_task4" onclick="selectTask('task4')">Висновки</button>
+            </nav>
+        </header>
+        <hr class="splitter">
+        <main class="main">
+            <section id="block_task1" style="display: none;">
+                <p>
+                    <b>Тема: </b>
+                    Веб-додаток меню ресторану з можливістю оцінки страв.
+                    <br>
+                    <br>
+                    <b>Мета: </b>
+                    Написання стайту для ресторану, на якому можна буде переглядати страви та залишати про них відгуки.
+                    Додавання до сайту необхідних елементів для зручного користування. Додавання зручної системи 
+                    данних для додавання та вилучення страв з переліку.
+                </p>
+            </section>
+
+            <section id="block_task2" style="display: none;">
+                <p>
+                    <b>FAF</b>
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
