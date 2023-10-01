@@ -11,10 +11,14 @@
     <div class="container">
         <header class="head">
             <nav class="nav">
-                <button id="taskButton_task1" onclick="selectTask('task1')">Опис предметного середовища</button>
-                <button id="taskButton_task2" onclick="selectTask('task2')">Структура документа, Git</button>
-                <button id="taskButton_task3" onclick="selectTask('task3')">Головна сторінка</button>
-                <button id="taskButton_task4" onclick="selectTask('task4')">Висновки</button>
+                <button id="taskButton_task1" onclick="selectTask('task1')">Тема, мета, посилання</button>
+                <button id="taskButton_task2" onclick="selectTask('task2')">Способи підключення стилів</button>
+                <button id="taskButton_task3" onclick="selectTask('task3')">Селектор тегу</button>
+                <button id="taskButton_task4" onclick="selectTask('task4')">Селектор класу</button>
+                <button id="taskButton_task5" onclick="selectTask('task5')">Селектор ідентифікатора</button>
+                <button id="taskButton_task6" onclick="selectTask('task6')">Інші селектори</button>
+                <button id="taskButton_task7" onclick="selectTask('task7')">CSS</button>
+                <button id="taskButton_task8" onclick="selectTask('task8')">Висновки</button>
             </nav>
         </header>
         <hr class="splitter">
@@ -22,19 +26,371 @@
             <section id="block_task1" style="display: none;">
                 <p>
                     <b>Тема: </b>
-                    Веб-додаток меню ресторану з можливістю оцінки страв.
+                    КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ .ІДЕНТИФІКАТОРИ. СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ В HTML-ДОКУМЕНТАХ.
                     <br>
                     <br>
                     <b>Мета: </b>
-                    Написання стайту для ресторану, на якому можна буде переглядати страви та залишати про них відгуки.
-                    Додавання до сайту необхідних елементів для зручного користування. Додавання зручної системи 
-                    данних для додавання та вилучення страв з переліку.
+                    придбати практичні навички роботи з селекторами, ідентифікаторами, списками, різноманітними властивостями 
+                    кольору і фону, зовнішними та внутрішними відступами, плаваючими елементами, оформленням текстових елементів.
+                    <br>
+                    <br>
+                    <b>Посилання: </b>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB" target="_blank">Сайт на Github</a>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB_report" target="_blank">Звіт на Github</a>
                 </p>
             </section>
 
             <section id="block_task2" style="display: none;">
+                <p><b>Існує три способи підключення стилів CSS до HTML:</b></p>
+                <ul>
+                    <li>
+                        Вбудовані стилі. CSS-правила додаються безпосередньо в HTML-код, в атрибуті style тегу &ltstyle>. 
+                        Цей спосіб є найпростішим, але його не рекомендується використовувати для великих проектів, 
+                        оскільки він може ускладнити читання і редагування коду.
+                        <pre class="code">
+&lthtml lang="en">
+    &lthead>
+        &lttitle>My Website</title>
+        &ltstyle>
+            h1 {
+                color: red;
+                font-size: 2em;
+            }
+        &lt/style>
+    &lt/head>
+&lt/html></pre>
+                    </li>
+                    <li>
+                        Зовнішні стилі. CSS-правила зберігаються в окремому файлі з розширенням .css. Файл CSS додається 
+                        до HTML-документу за допомогою тегу &ltlink>. Цей спосіб є більш зручним і кращим для організації коду.
+                        <pre class="code">
+&lthtml lang="en">
+    &lthead>
+        &lttitle>My Website&lt/title>
+        &ltlink rel="stylesheet" href="styles.css">
+    &lt/head>
+    &ltbody>
+        &lth1>This is a heading&lt/h1>
+    &lt/body>
+&lt/html></pre>
+                    </li>
+                    <li>
+                        Стилі, імпортовані за допомогою @import. CSS-правила можна імпортувати з інших CSS-файлів за допомогою
+                        директиви @import. Цей спосіб є аналогічним використанню зовнішніх стилів, але дозволяє імпортувати 
+                        стилі з інших файлів, не створюючи для них окремі теги &ltlink>.
+                        <pre class="code">
+&lthtml lang="en">
+    &lthead>
+        &lttitle>My Website</title>
+        &ltstyle>
+        @import url("styles.css");
+        &lt/style>
+    &lt/head>
+    &ltbody>
+        &lth1>This is a heading&lt/h1>
+    &lt/body>
+&lt/html></pre>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="block_task3" style="display: none;">
                 <p>
-                    <b>FAF</b>
+                    Селектор тегу - це тип селектора CSS, який використовується для вибору елементів на основі їх імені тегу.
+                    Селектори тегу - це найпростіший тип селектора CSS. Вони часто використовуються для стилізації елементів 
+                    за їхньою функцією на сторінці. Наприклад, можна використовувати селектор тегу h1 для стилізації заголовків, 
+                    а селектор тегу p для стилізації абзаців.
+
+                    <pre class="code">
+body {
+    background-color: #664C3B;
+}</pre>
+                    <br>
+                    При застосуванні цього фрагменту фон всієї сторінки буде зафарбована в колір #664C3B:
+                    <br>
+                    <br>
+                    <img src="/report/images/lab2-screenshot1.png" style="width: 100%;">
+                </p>
+            </section>
+
+            <section id="block_task4" style="display: none;">
+                <p>
+                    Селектор класу - це тип селектора CSS, який використовується для вибору елементів на основі їх класу.
+                    Клас - це атрибут тегу, який можна використовувати для групування елементів. Селектор класу 
+                    складається з точки (.) і імені класу.
+                    <br>
+                    Селектори класу - це потужний інструмент, який дозволяє стилізувати елементи за їхнім змістом 
+                    або призначенням. Наприклад, можна використовувати селектори класу для стилізації всіх елементів, 
+                    які є посиланнями, або для стилізації всіх елементів, які є зображеннями.
+                    <pre class="code">
+.attic-link a {
+    display: inline-block;
+    font-size: medium;
+    color: #d6b6a1;
+    text-decoration: none;
+    border-bottom: dotted #d6b6a1 3px;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.5s ease-out, border-bottom 0.5s ease-out;
+}
+
+.attic-link a:hover {
+    color: #EAD9CE;
+    border-bottom: solid #EAD9CE 3px;
+    transition: border-bottom 0.5s ease-out;
+}
+
+.attic-link i {
+    margin-right: 4px;
+}</pre>
+                    <br>
+                    <pre class="code">
+&ltdiv class="attic-link-group">
+    &ltdiv class="attic-link">
+        &lti class="fa fa-instagram">&lt/i>
+        &lta href="https://www.instagram.com/">Ми в Instagram&lt/a>
+    &lt/div>
+    &ltdiv class="attic-link" style="margin-left: 32px;">
+        &lti class="fa fa-telegram">&lt/i>
+        &lta href="https://web.telegram.org/">Ми в Telegram&lt/a>
+    &lt/div>
+&lt/div>
+                    </pre>
+                    <br>
+                    При застосуванні класу "attic-link" всі посилання будуть мати такий вигляд:
+                    <br>
+                    <br>
+                    <img src="/report/images/lab2-screenshot2.1.png">
+                    <img src="/report/images/lab2-screenshot2.2.png">
+                </p>
+            </section>
+
+            <section id="block_task5" style="display: none;">
+                <p>
+                    Селектор ідентифікатора - це тип селектора CSS, який використовується для вибору елементів 
+                    на основі їхнього ідентифікатора. Ідентифікатор - це атрибут тегу, який може використовуватися 
+                    для унікальної ідентифікації елемента. Селектор ідентифікатора складається з знака решітки 
+                    (#) і імені ідентифікатора.
+                    <br>
+                    Селектори ідентифікатора - це найточніший тип селектора CSS. Вони дозволяють стилізувати 
+                    тільки один елемент на сторінці.
+                    <br>
+                    <pre class="code">
+#margin1 {
+    margin: 0px 12px;
+}</pre>
+                    <br>
+                    <pre class="code">
+&ltdiv class="attic-button-group horizontal-list-group">
+    &ltul>
+        &ltli class="attic-animated-link" id="margin1">
+            &lta href="#">UKR</a>
+        &lt/li>
+    &lt/ul>
+&lt/div></pre>
+                    <br>
+                    Цей CSS код встановлює margin 12 пікселів зліва та зправа для елементів з id="margin1":
+                    <br>
+                    <br>
+                    <img src="/report/images/lab2-screenshot3.png">
+                </p>
+            </section>
+
+            <section id="block_task6" style="display: none;">
+                <p>
+                    <b>Крім селекторів тегу, класу і ідентифікатора, існує ще кілька типів селекторів CSS:</b>
+                    <ul>
+                        <li>
+                            <b>Селектори псевдокласів</b>
+                             - це тип селектора CSS, який використовується для вибору 
+                            елементів на основі їхнього стану або поведінки. Наприклад, селектор псевдокласу 
+                            :hover буде вибирати елементи, які знаходяться під курсором миші.
+                        </li>
+                        <br>
+                        <li>
+                            <b>Селектори псевдоелементів</b>
+                             - це тип селектора CSS, який використовується для вибору 
+                            елементів, які не існують фізично на сторінці. Наприклад, селектор псевдоелементу 
+                            ::after буде вставляти новий елемент після вибраного елемента.
+                        </li>
+                        <br>
+                        <li>
+                            <b>Селектори атрибутів</b>
+                             - це тип селектора CSS, який використовується для вибору 
+                            елементів на основі їхніх атрибутів. Наприклад, селектор атрибута [href] буде 
+                            вибирати всі елементи, які мають атрибут href.
+                        </li>
+                        <br>
+                        <li>
+                            <b>Селектори комбінатори</b> 
+                             - це тип селектора CSS, який використовується для вибору 
+                            елементів на основі їхніх взаємозв'язків. Наприклад, селектор комбінатора > буде 
+                            вибирати всі елементи, які є прямими потомками вибраного елемента.
+                        </li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task7" style="display: none;">
+                <p>
+                    Комбінуючи ідентифікатори, стилі та властивості можна створювати незвичайні та красиві 
+                    елементи на сторінці, додавати анімації, переходи та інше.
+                    <br>
+                    <br>
+                    Наприклад:
+                    <br>
+                    <br>
+                    <b>Анімація кнопок: </b>
+                    <pre class="code">
+.attic-button {
+    display: block;
+    height: 70%;
+    width: 100%;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.attic-button ul {
+    display:none;
+    position: relative;
+    top: -4px;
+    background-color: #EAD9CE;
+    height: fit-content;
+    width: 120%;
+    left: -10%;
+    padding-bottom: 5%;
+    cursor: default;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.attic-button:hover ul {
+    display:block;
+}
+
+.attic-button a {
+    transition: all 0.3s;
+}
+
+.attic-button:hover a {
+    letter-spacing: 2px;
+}
+
+.attic-button::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #664C3B;
+    border-bottom-color: #664C3B;
+    transform: scale(0.1, 1);
+}
+
+.attic-button:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}   
+
+.attic-button * {
+    display: block;
+    text-align: center;
+    height: 100%;
+    padding-top: 10px;
+}</pre>
+                    <br>
+                    <pre class="code">
+&ltnav class="block horizontal-list-group attic-nav">
+    &ltul>
+        &ltli class="attic-button">
+            &lta class="clear-link" href="#">Про нас&lt/a>
+            &ltul>
+                &ltli class="attic-animated-link-blacked">
+                    &lta href="#">Контакти&lt/a>
+                &lt/li>
+                &ltli class="attic-animated-link-blacked">
+                    &lta href="#">Новини&lt/a>
+                &lt/li>
+                &ltli class="attic-animated-link-blacked">
+                    &lta href="#">Відгуки&lt/a>
+                    &lt/li>
+            &lt/ul>
+        &lt/li>
+    &lt/ul>
+&lt/nav></pre>
+                    <br>
+                    <img src="/report/images/lab2-screenshot4.1.png" width="100%">
+                    <img src="/report/images/lab2-screenshot4.2.png" width="100%">
+                    <br>
+                    <br>
+                    <b>Іконки:</b>
+                    <pre class="code">
+&lthead>
+    &ltmeta charset="UTF-8">
+    &ltmeta name="viewport" content="width=device-width, initial-scale=1.0">
+    &ltlink rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    &ltlink rel="stylesheet" href="styles.css">
+    &lttitle>Document&lt/title>
+&lt/head>
+&ltbody>
+    &ltheader>
+        &ltdiv class="attic-link-group">
+            &ltdiv class="attic-link">
+                &lti class="fa fa-instagram">&lt/i>
+                &lta href="https://www.instagram.com/">Ми в Instagram&lt/a>
+            &lt/div>
+            &ltdiv class="attic-link" style="margin-left: 32px;">
+                &lti class="fa fa-telegram">&lt/i>
+                &lta href="https://web.telegram.org/">Ми в Telegram&lt/a>
+            &lt/div>
+        &lt/div>
+    &lt/header>
+&lt/body></pre>
+                    <br>
+                    <img src="/report/images/lab2-screenshot2.1.png">
+                    <br>
+                    <br>
+                    <b>Тінь тексту:</b>
+                    <pre class="code">
+.attic-title-name {
+    font-style: oblique;
+    font-size: larger;
+    font-variant-caps:all-small-caps;
+    text-align: center;
+    width: 35%;
+}
+
+.attic-title-name h3, .attic-title-name h2 {
+    text-shadow: 3px 3px 5px rgba(227, 194, 95, 0.5);
+}</pre>
+                    <br>
+                    <pre class="code">
+&ltdiv class="attic-title">
+    &ltdiv class="attic-title-name">
+        &lth3>Ресторан&lt/h3>
+        &lth2>"Придумайте назву"&lt/h2>
+    &lt/div>
+&lt/div></pre>
+                    <br>
+                    <img src="/report/images/lab2-screenshot5.png">
+                </p>
+            </section>
+
+            <section id="block_task8" style="display: none;">
+                <p>
+                    Під час цієї лаборатоної ми навчилися вікористовувати різноманітні селектори, працювати з різними 
+                    елементами CSS, створювати анімації, тіні, продвинуті межі та інші стиліві офрмлення.
                 </p>
             </section>
         </main>
