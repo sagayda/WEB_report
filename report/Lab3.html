@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles-lab.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="head">
+            <nav class="nav">
+                <button class="nav-button" id="taskButton_task1" onclick="selectTask('task1')">Тема, мета, посилання</button>
+                <div class="nav-button-container">
+                    <p>Завдання 1</p>
+                    <button class="nav-button" id="taskButton_task2" onclick="selectTask('task2')">Завдання 1</button>
+                </div>
+                <div class="nav-button-container">
+                    <p>Завдання 2</p>
+                    <button class="nav-button" id="taskButton_task3" onclick="selectTask('task3')">Фіксована таблична верстка</button>
+                    <button class="nav-button" id="taskButton_task4" onclick="selectTask('task4')">Гумова таблична верстка</button>
+                    <button class="nav-button" id="taskButton_task5" onclick="selectTask('task5')">Фіксована блокова верстка</button>
+                    <button class="nav-button" id="taskButton_task6" onclick="selectTask('task6')">Гумова блокова верстка</button>
+                </div>
+                <div class="nav-button-container">
+                    <p>Завдання 3</p>
+                    <button class="nav-button" id="taskButton_task7" onclick="selectTask('task7')">Скріншот, HTML, CSS</button>
+                </div>
+                <button class="nav-button" id="taskButton_task8" onclick="selectTask('task8')">Висновки</button>
+            </nav>
+        </header>
+        <hr class="splitter">
+        <main class="main">
+            <section id="block_task1" style="display: none;">
+                <p>
+                    <b>Тема: </b>
+                    ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX.
+                    <br>
+                    <br>
+                    <b>Мета: </b>
+                    Придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів, 
+                    з’ясувати переваги та недоліки типів макетів веб-сторінок.
+                    <br>
+                    Придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX
+                    <br>
+                    <br>
+                    <b>Посилання: </b>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB" target="_blank">Сайт на Github</a>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB_report" target="_blank">Звіт на Github</a>
+                </p>
+            </section>
+
+            <section id="block_task2" style="display: none;">
+                <img src="/report/images/lab3-screenshot1.png" style="object-fit: contain; width: 100%;">
+                <br>
+                <pre class="code">
+&lt;body&gt;
+    &lt;header class="sticky-header"&gt;
+        &lt;div class="attic"&gt;
+            &lt;div class="attic-button-group horizontal-list-group"&gt;
+                &lt;ul&gt;
+                    ***
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div class="attic-link-group"&gt;
+                ***
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;section class="attic-title"&gt;
+            &lt;div class="attic-title-name"&gt;
+                ***
+            &lt;/div&gt;
+            &lt;div class="attic-title-phone"&gt;
+                ***
+            &lt;/div&gt;
+            &lt;div class="attic-title-map"&gt;
+                ***
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;nav class="block horizontal-list-group attic-nav"&gt;
+            &lt;ul&gt;
+                ***
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main style="height: 1000px;"&gt;
+        &lt;div style="height: 100%; background-color: rgba(4, 255, 0, 0.1); max-width: 20%;"&gt;
+            ***
+        &lt;/div&gt;
+        &lt;div style="height: 100%; background-color: rgba(0, 51, 255, 0.1);"&gt;
+            ***
+        &lt;/div&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;div class="footer-main"&gt;
+            &lt;div style="color: #EAD9CE; flex-shrink: 0;"&gt;
+                ***
+            &lt;/div&gt;
+            &lt;div style="flex-grow: 1;"&gt;
+                ***
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="footer-bottom"&gt;
+            ***
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</pre>
+                <br>
+                <p>
+                    В цьому завданні я використав тип макету "гумовий". На мою думку, це найбіль підходящий варіант, 
+                    оскільки сайт будет виглядати гарно та зручно на екранах з різної роздільною якістю, будть-то 
+                    4К чи HD. 
+                    <br>
+                    <br>
+                    Використаний мною макет схожий на макет із завдання 2 та варіантом 4. Зверху маємо header, якмй включає 
+                    в себе панель навігації, яка залишається зверху екрана при прокручуванні сторінки. В main маємо 2 "колонки", 
+                    з яких права - основна, а ліва - для відображення додаткової інформації, наприклад нинішніх акцій. Внизу 
+                    знаходиться footer, в якому маємо лого сайту, контактну інформацію та деаякі корисні посилання.
+                    <br>
+                    <br>
+                    Загалом, макет має 4 основні блоки, які вміщують в себе необхідну інформацію та навігацію.
+                </p>
+            </section>
+
+            <section id="block_task3" style="display: none;">
+                <img src="/report/images/lab3-screenshot2.1.png" style="object-fit: contain; width: 100%;">
+                <p>
+                    <b>Переваги:</b>
+                    <ul>
+                        <li>Проста у реалізації</li>
+                        <li>Легко масштабується для різних розмірів екранів</li>
+                        <li>Висока сумісність з різними браузерами</li>
+                    </ul>
+                    <b>Недоліки:</b>
+                    <ul>
+                        <li>Негнучка, не дозволяє адаптуватися до різних розмірів екранів</li>
+                        <li>Може виглядати непривабливо на маленьких екранах</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task4" style="display: none;">
+                <img src="/report/images/lab3-screenshot2.2.png" style="object-fit: contain; width: 100%;">
+                <p>
+                    <b>Переваги:</b>
+                    <ul>
+                        <li>Більш гнучка, ніж фіксована, дозволяє адаптуватися до різних розмірів екранів</li>
+                        <li>Легко масштабується</li>
+                        <li>Сумісна з різними браузерами</li>
+                    </ul>
+                    <b>Недоліки:</b>
+                    <ul>
+                        <li>Складніша у реалізації, ніж фіксована</li>
+                        <li>Може вимагати додаткових стилів для забезпечення коректного відображення на різних пристроях</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task5" style="display: none;">
+                <img src="/report/images/lab3-screenshot2.3.png" style="object-fit: contain; width: 100%;">
+                <p>
+                    <b>Переваги:</b>
+                    <ul>
+                        <li>Гнучка, дозволяє адаптуватися до різних розмірів екранів</li>
+                        <li>Легко масштабується</li>
+                        <li>Сучасний вигляд</li>
+                    </ul>
+                    <b>Недоліки:</b>
+                    <ul>
+                        <li>Складніша у реалізації, ніж фіксована таблична</li>
+                        <li>Може вимагати додаткових стилів для забезпечення коректного відображення на різних пристроях</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task6" style="display: none;">
+                <img src="/report/images/lab3-screenshot2.4.png" style="object-fit: contain; width: 100%;">
+                <p>
+                    <b>Переваги:</b>
+                    <ul>
+                        <li>Комбінація переваг фіксованих і гумових версток</li>
+                        <li>Гнучка, дозволяє адаптуватися до різних розмірів екранів</li>
+                        <li>Сучасний вигляд</li>
+                        <li>Легко масштабується</li>
+                    </ul>
+                    <b>Недоліки:</b>
+                    <ul>
+                        <li>Складніша у реалізації, ніж фіксовані таблична і блокова</li>
+                        <li>Може вимагати додаткових стилів для забезпечення коректного відображення на різних пристроях</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task7" style="display: none;">
+                <img src="/report/images/lab3-screenshot3.png" style="object-fit: contain; width: 100%;">
+                <br>
+                <br>
+                <b>HTML:</b>
+                <pre class="code">
+&lt;body&gt;
+    &lt;header class="header"&gt;
+        &lt;h2&gt;Ефективні методи навчання&lt;/h1&gt;
+        &lt;h1&gt;100% засвоєння матеріалу&lt;/h2&gt;
+        &lt;section class="header-main"&gt;
+            &lt;div class="header-main-text"&gt;
+                &lt;p class="header-main-text-grey"&gt;
+                    Починаючи з 2016 року ми відточували наші методи навчання і знайшли найбільш дієвий спосіб,
+                    який дає можливість студентам опановувати програму краще і в більшому об'ємі.
+                &lt;/p&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        Лекційний матеріал подається окремо. Це дає змогу зосередитись на ознайомленні з ним не
+                        відволікаючись на виконання будь-яких дій.
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Практичні заняття проходять в окремі дні і включають завдання по попередній лекції. 
+                        При цьому, частина завдань не містить абстрактних умов. Це дає змогу чітко закріпити пройдений 
+                        матеріал. Але є завдання, які змусять вас розвиватись, оскільки будуть вже більш абстрактними, 
+                        і їх виконання буде залежати від вашої уяви.
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                        Як результат поєднання попередніх фактори ви опануєте теоретичну частину, закріпите її на практиці в
+                        двох різновидах завдань.
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;img src="img1.png" style="object-fit: contain; width: 100%;"&gt;
+                &lt;button class="header-main-button"&gt;всі відгуки&lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;/ul&gt;
+        &lt;/section&gt;
+    &lt;/header&gt;
+    &lt;main class="main"&gt;
+        &lt;section&gt;
+            &lt;h2 class="header-text-blue"&gt;Наші курси&lt;/h3&gt;
+            &lt;h1 class="header-text"&gt;Обери напрямок програмування&lt;/h1&gt;
+
+            &lt;div class="language-box-container"&gt;
+                &lt;div class="language-box"&gt;
+                    &lt;p&gt;java complex&lt;/p&gt;
+                    &lt;button class="language-box-button"&gt;Детальніше&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="language-box"&gt;
+                    &lt;p&gt;javascript complex&lt;/p&gt;
+                    &lt;button class="language-box-button"&gt;Детальніше&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="language-box"&gt;
+                    &lt;p&gt;pyrhon complex&lt;/p&gt;
+                    &lt;button class="language-box-button"&gt;Детальніше&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;div class="language-box"&gt;
+                    &lt;p&gt;QA\QC ТЕСТУВАННЯ&lt;/p&gt;
+                    &lt;button class="language-box-button"&gt;Детальніше&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section class="main-footer"&gt;
+            &lt;div style="flex-shrink: 1; margin-top: 50px;"&gt;
+                &lt;img src="img2.png"&gt;
+                &lt;p&gt;Відгук Loonar про випускників Okten&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div style="flex-shrink: 1;"&gt;
+                &lt;div&gt;
+                    &lt;h2 class="header-text"&gt;роботодавці задоволені&lt;/h2&gt;
+                    &lt;h1 class="header-text-blue"&gt;нашими випускниками&lt;/h1&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;img src="img3.png"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+    &lt;/main&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;Copyright &copy; 2023 Loonar&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;</pre>
+                <br>
+                <br>
+                <b>CSS:</b>
+                <pre class="code">
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+ul {
+    list-style-type: disc;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+.header {
+    background-color: #222222;
+    height: max-content;
+    color: #fff;
+    padding: 1em;
+    margin: 1em;
+}
+
+.header h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.header h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff9638;
+    font-weight: 900;
+}
+
+.header-main {
+    display: flex;
+}
+
+.header-main-text {
+    flex-shrink: 0;
+    width: 50%;
+    margin: 10px;
+    padding: 10px;
+    margin-right: 5%;
+}
+
+.header-main-text * {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.header-main-text-grey {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #c6c6c6
+}
+
+.header-main-button {
+    margin: 10px 0;
+    background-color: gold;
+    border-radius: 6px;
+    width: 40%;
+    height: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-text {
+    text-align: center;
+    text-transform: uppercase;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1em;
+}
+
+.header-text-blue {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4fc1ff;
+    font-weight: 800;
+    line-height: 1em;
+}
+
+.language-box-container {
+    display: flex;
+    height: 200px;
+    width: 100%;
+}
+
+.language-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 1px #81bfd636;
+    border-radius: 10px;
+    height: 100%;
+    width: 25%;
+    overflow: hidden;
+    margin: 0.5%;
+    text-transform: uppercase;
+    font-weight: 1000;
+    font-size: 3.5vh;
+    color: #4fc1ff;
+    text-align: center;
+}
+
+.language-box-button {
+    width: 100%;
+    background-color: #7ab5ca41;
+    border: hidden;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.main-footer {
+    display: flex;
+    margin: 50px 0;
+    background-color: #e8f5fd;
+    height: 350px;
+    padding: 20px;
+}
+
+.main-footer img {
+    object-fit: contain; 
+    width: 100%;
+}
+
+
+footer {
+    background-color: #222222;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}</pre>
+            </section>
+
+            <section id="block_task8" style="display: none;">
+                <p>
+                    Під час цієї лаборатоної ми навчилися використовувати верстки сторінок, засоби CSS для їх створення, 
+                    навчилися використовувати верстки на основі плаваючих елементів, з’ясували переваги та недоліки 
+                    типів макетів веб-сторінок.
+                    <br>
+                    Також ми придбали практичні навички роботи верстки сторінок засобами CSS та FLEXBOX.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

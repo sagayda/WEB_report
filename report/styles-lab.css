@@ -25,6 +25,7 @@ button {
     max-width: 20%;
     padding: 10px;
     height: 95vh;
+    overflow: auto;
 }
 
 .splitter {
@@ -57,23 +58,43 @@ button {
     width: 100%;
 }
 
-.nav button {
+.nav-button-container {
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    flex-grow: 1;
+    min-height: 45px;
+    padding: 4px;
+    border: solid rgba(255, 255, 255, 0.8) 2px;
+    border-radius: 5px;
+    background-color: #7a572f;
+}
+
+.nav-button-container p {
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin: 3px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.nav-button {
     margin: 4px;
     flex-grow: 1;
     height: auto;
     min-height: 45px;
     padding: 8px;
-    border: solid white 2px;
+    border: solid rgba(255, 255, 255, 0.8) 2px;
     border-radius: 5px;
     cursor: pointer;
     background-color: #72522d;
 }
 
-.nav button:hover{
+.nav-button:hover{
     background-color: #9C6F3D;
 }
 
-.nav button:disabled{
+.nav-button:disabled{
     background-color: #C28B4C;
     cursor:unset;
 }
