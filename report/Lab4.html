@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles-lab.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="head">
+            <nav class="nav">
+                <button class="nav-button" id="taskButton_task1" onclick="selectTask('task1')">Тема, мета, посилання</button>
+                <div class="nav-button-container">
+                    <p>Адаптивна верстка</p>
+                    <button class="nav-button" id="taskButton_task2" onclick="selectTask('task2')">Десктопна версія</button>
+                    <button class="nav-button" id="taskButton_task3" onclick="selectTask('task3')">Планшетна версія</button>
+                    <button class="nav-button" id="taskButton_task4" onclick="selectTask('task4')">Мобільна версія</button>
+                </div>
+                <div class="nav-button-container">
+                    <p>Теоретичні відомості</p>
+                    <button class="nav-button" id="taskButton_task5" onclick="selectTask('task5')">Медіа-запити</button>
+                    <button class="nav-button" id="taskButton_task6" onclick="selectTask('task6')">Медіа-типи</button>
+                    <button class="nav-button" id="taskButton_task7" onclick="selectTask('task7')">Медіа-функції</button>
+                    <button class="nav-button" id="taskButton_task8" onclick="selectTask('task8')">Метатег viewport</button>
+                </div>
+                <button class="nav-button" id="taskButton_task9" onclick="selectTask('task9')">Висновки</button>
+            </nav>
+        </header>
+        <hr class="splitter">
+        <main class="main">
+            <section id="block_task1" style="display: none;">
+                <p>
+                    <b>Тема: </b>
+                    АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT. СТРАТЕГІЯ MOBILE FIRST.
+                    <br>
+                    <br>
+                    <b>Мета: </b>
+                    Адаптивна верстка. Медіа-запити. Медіа-типи. Медіа-функції. Метатег viewport. Інструменти розробника. Стратегія Mobile First.
+                    <br>
+                    <br>
+                    <b>Посилання: </b>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB" target="_blank">Сайт на Github</a>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB_report" target="_blank">Звіт на Github</a>
+                </p>
+            </section>
+
+            <section id="block_task2" style="display: none;">
+                <img src="/report/images/lab4-screenshot1.png" style="object-fit: contain; width: 100%;">
+                <br>
+                <pre class="code">
+@media (min-width:1200px){
+
+    .attic-social-group {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 30%;
+    }
+
+    .footer-main {
+        flex-direction: row;
+    }
+
+    .attic-nav-button-dropdown {
+        border:none;
+        top: 1.2em;
+        padding: 0;
+        margin: 0.3em 0 0 0;
+    }
+
+    .attic-title-phone-group {
+        display: flex;
+    }
+
+    .footer-link-container li {
+        width: 10em;
+        height: 1em;
+        margin: 1.5em 0;
+        padding: 0;
+    }
+
+    
+    ul.footer-link-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-phone {
+        margin: 0.5em 0;
+        padding: 0;
+    }
+
+    .attic-nav-group > ul {
+        flex-direction: row;
+    }
+
+    .attic-nav-button {
+        width: auto;
+    min-width: 10em;
+
+    }
+
+    .main-additional {
+        display: block;
+    }
+
+    .footer-bottom * {
+        font-size: 1em;
+    }
+
+    .map {
+        display: block;
+
+    }
+
+    header {
+        top: -27.5%;
+    }
+}</pre>
+                <p>
+                    Реалізувати десктопну версію сайту було найпростіше, оскільки з самого початку сайт розроблявся саме для неї.
+                    <br>
+                    <br>
+                    Ми використали медіа-запит "@media (min-width:1200px)", щоб вказані нижче стилі використовувались тільки для 
+                    екранів з шириною 1200 пікселів і більше. В цей блок було винесено в основному параметри ширини та відображення різних елементів,
+                    оскільки інші атрибути, наприклад колір, шрифт і т.д. збігаються для всіх версій сайту і немає сенсу їх дублювати в блоках
+                    медіа-апитів. 
+                    <br>
+                    <br>
+                    Загалом, цей макет не змінився відносно попередньої лабораторної, лише було перенесено мапу та змінені відступи та ширина
+                    деякіх елементів.
+                </p>
+            </section>
+
+            <section id="block_task3" style="display: none;">
+                <img src="/report/images/lab4-screenshot2.png" style="object-fit: contain; width: 100%;">
+                <br>
+                <pre class="code">
+@media (min-width:700px) and (max-width:1200px){
+
+    .attic-social-group {
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 40%;
+    }
+
+    .footer-main {
+        flex-direction: row;
+    }
+
+    .attic-nav-button-dropdown {
+        border:#4D392C solid 1px;
+        border-top:none;
+        top: 1.25em;
+        padding: 0;
+        margin: 0.8em 0 0 0;
+        box-shadow: 0 1.2em 16px 4px rgba(0, 0, 0, 0.24);
+    }
+
+
+    .attic-title-phone-group {
+        display: flex;
+    }
+
+    .footer-link-container li {
+        width: 10em;
+        height: 1em;
+        margin: 1.5em 0;
+        padding: 0;
+    }
+
+    
+    ul.footer-link-container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-phone {
+        margin: 0.5em 0;
+        padding: 0;
+    }
+
+    .attic-nav-group > ul {
+        flex-direction: row;
+    }
+
+    .attic-nav-button {
+        width: auto;
+        min-width: 45%;
+        
+    }
+
+    .main-additional {
+        display: block;
+    }
+
+    .footer-bottom * {
+        font-size: 0.8em;
+    }
+
+    .map {
+        display: none;
+    }
+
+    header {
+        top: -27.5%;
+    }
+}</pre>
+                <p>
+                    Для реалізації планшетної версії вже були внесені деякі зміни в початковий пакет.
+                    <br>
+                    <br>
+                    Цього разу ми використали медія запит @media (min-width:700px) and (max-width:1200px) з логічним оператором
+                    and, щоб вказані стилі використовувались для екранів шириною від 700 пікселів до 1200 пікселів. Таким чином ми
+                    обмежили цей медіа-запит в чітки границі, що він не "накладався" на інші.
+                    <br>
+                    <br>
+                    Для планшетної версії було змінено відображення головної панелі навігації - тепер вона може відображатися в
+                    декілька рядків. Також біла прибрана мапа, оскільки місця для її розміщеня на екранах планшетів вже недостатньо.
+                </p>
+            </section>
+
+            <section id="block_task4" style="display: none;">
+                <img src="/report/images/lab4-screenshot3.png" style="object-fit: contain; width: 40%;">
+                <br>
+                <pre class="code">
+@media (max-width:700px){
+
+    .attic-social-group {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .footer-main {
+        flex-direction: column;
+    }
+
+    .attic-nav-button-dropdown {
+        border:#4D392C solid 1px;
+        border-top:none;
+        top: 1.2em;
+        padding: 0;
+        margin: 0.8em 0 0 0;
+        box-shadow: 0 1.2em 16px 4px rgba(0, 0, 0, 0.24);
+    }
+
+    .attic-title-phone-group {
+        display: none;
+    }
+
+    .footer-link-container li {
+        width: fit-content;
+        height: 1em;
+        margin: 0.8em 1em;
+        padding: 0;
+    }
+
+    ul.footer-link-container  {
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    .footer-phone {
+        margin: 0.5em 0;
+        padding: 0;
+    }
+
+    .attic-nav-group > ul {
+        flex-direction: column;
+    }
+
+    .attic-nav-button {
+        width: 90%;
+    min-width: 10em;
+
+    }
+
+    .main-additional {
+        display: none;
+    }
+
+    .footer-bottom * {
+        font-size: 0.75em;
+    }
+
+    .map {
+        display: none;
+    }
+
+    header {
+        top: -30.5%;
+    }
+}</pre>
+                <p>
+                    Для реалізації мобільної версії сайту було внесені найбільші зміни в початковий макет.
+                    <br>
+                    <br>
+                    Цього разу також був використаний медіа-запит @media (max-width:700px), проте з атрибутом max-width, що означає,
+                    що вказані нижче стилі будуть використані для екранів з шириною манше 700 пікселів. Отже ций макет буде 
+                    використовуватись для телефонів або ж в випадку, коли розмір вікна сайту доволі вузьке.
+                    <br>
+                    <br>
+                    В мобільній версії сайту головна панель навігації відображається вже не по рядкам, а стовпцем, щоб кнопками було
+                    зручно користуватись на маленьких екранах, а текст мав достатньо місця для розміщення. Footer тепер також 
+                    розміщується вертикально, а мапа прибрана. З header'а була прибрана вся додаткова інформація та перенесена в footer,
+                    залишивши зверху тільки назву ресторану. Також в основній частині сайту було прибрана додаткова частина, що
+                    в інших версіях відображається зліва від основної.
+                </p>
+            </section>
+
+            <section id="block_task5" style="display: none;">
+                <p>
+                    Медіа-запити - це правила CSS, що дозволяють керувати стилями елементів залежно від значень 
+                    технічних параметрів (висота та ширина браузера, роздільна здатність сторінки, типу пристрою, 
+                    його орієнтації, щільності пікселів тощо).
+                    <br>
+                    <br>
+                    Медіа-запити описуються так:
+                    <pre class="code">
+@media media-type {
+  /* CSS-правила */
+}</pre>
+                    <br>
+                    Де media-type - медіа-тип, який визначає, на які пристрої будуть застосовуватися CSS-правила.
+                </p>
+            </section>
+
+            <section id="block_task6" style="display: none;">
+                <p>
+                    Медіа-типи можна розділити на кілька категорій:
+                    <br>
+                    <br>
+                    <b>За розміром пристрою:</b>
+                    <ul>
+                        <li>all - всі пристрої</li>
+                        <li>screen - дисплеї</li>
+                        <li>print - принтери</li>
+                        <li>handheld - портативні пристрої</li>
+                    </ul>
+                    <br>
+                    <b>За орієнтацією пристрою:</b>
+                    <ul>
+                        <li>portrait - портретна орієнтація</li>
+                        <li>landscape - альбомна орієнтація</li>
+                    </ul>
+                    <br>
+                    <b>За типом пристрою:</b>
+                    <ul>
+                        <li>(device-type: desktop) - комп'ютери</li>
+                        <li>(device-type: mobile) - мобільні пристрої</li>
+                        <li>(device-type: tablet) - планшети</li>
+                    </ul>   
+                    <br>   
+                    <b>За роздільною здатністю пристрою:</b>
+                    <ul>
+                        <li>(min-width: 400px) - ширина пристрою не менше 400 пікселів</li>
+                        <li>(max-width: 800px) - ширина пристрою не більше 800 пікселів</li>
+                    </ul>
+                    <br>        
+                    <b>За щільністю пікселів пристрою:</b>
+                    <ul>
+                        <li>(min-device-pixel-ratio: 2) - щільність пікселів пристрою не менше 2</li>
+                        <li>(max-device-pixel-ratio: 3) - щільність пікселів пристрою не більше 3</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task7" style="display: none;">
+                <p>
+                    Медіа-функції - це функції, які використовуються для визначення значень технічних параметрів пристрою.
+                    <br>
+                    <br>
+                    Деякі з найпоширеніших медіа-функцій:
+                    <ul>
+                        <li>min-width() - мінімальна ширина пристрою</li>
+                        <li>max-width() - максимальна ширина пристрою</li>
+                        <li>min-height() - мінімальна висота пристрою</li>
+                        <li>max-height() - максимальна висота пристрою</li>
+                        <li>orientation() - орієнтація пристрою</li>
+                        <li>device-type() - тип пристрою</li>
+                        <li>device-pixel-ratio() - щільність пікселів пристрою</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task8" style="display: none;">
+                <p>
+                    Метатег viewport - це метатег HTML, який дозволяє вказати браузеру, як він повинен відображати 
+                    сторінку в залежності від розміру пристрою.
+                    <br>
+                    <br>
+                    Метатег viewport описується так:
+                    <pre class="code">
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"></pre>
+                    <br>
+                    Де:
+                    <ul>
+                        <li>width=device-width - вказує браузеру відображати сторінку так, щоб її ширина відповідала ширині пристрою.</li>
+                        <li>initial-scale=1.0 - вказує браузеру використовувати початковий масштаб 1.0.</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task9" style="display: none;">
+                <p>
+                    Під час цієї лаборатоної роботи ми навчилися створювати адаптивні верстки для різних пристроїв, а саме:
+                    <ul>
+                        <li>Десктопна версія</li>
+                        <li>Планшетна версія</li>
+                        <li>Мобільна версія</li>
+                    </ul>
+                    <br>
+                    Ми використали медіа-запити та медіа-функції для адаптації нашого сайту під різні типи пристроїв, щоб його
+                    використання було зручне для всіх відвідувачів.
+                    <br>
+                    <br>
+                    Також ми впевнились в актуальності статегії Mobile First, оскільки для адаптації декстопної версії сайту під 
+                    мобільні телефони довелося майже повністю змінювати верстку сайту, чого не відбулось би, якби з самого початку
+                    розробки сайту була використана ця стратегія.
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
