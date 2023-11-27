@@ -13,24 +13,32 @@
             <nav class="nav">
                 <button class="nav-button" id="taskButton_task1" onclick="selectTask('task1')">Тема, мета, посилання</button>
                 <div class="nav-button-container">
+                    <p>Способи функціонального застосування JavaScript</p>
+                    <button class="nav-button" id="taskButton_task2" onclick="selectTask('task2')">Схема URL</button>
+                    <button class="nav-button" id="taskButton_task3" onclick="selectTask('task3')">Обробник подій</button>
+                    <button class="nav-button" id="taskButton_task4" onclick="selectTask('task4')">Підстановка (entity)</button>
+                    <button class="nav-button" id="taskButton_task5" onclick="selectTask('task5')">Вставка (тег script)</button>
+                </div>
+                <div class="nav-button-container">
                     <p>Завдання 1</p>
-                    <button class="nav-button" id="taskButton_task2" onclick="selectTask('task2')">HTML</button>
-                    <button class="nav-button" id="taskButton_task3" onclick="selectTask('task3')">JAVASCRIPT</button>
+                    <button class="nav-button" id="taskButton_task6" onclick="selectTask('task6')">HTML</button>
+                    <button class="nav-button" id="taskButton_task7" onclick="selectTask('task7')">JAVASCRIPT</button>
                 </div>
                 <div class="nav-button-container">
                     <p>Завдання 2</p>
-                    <button class="nav-button" id="taskButton_task4" onclick="selectTask('task4')">HTML</button>
+                    <button class="nav-button" id="taskButton_task8" onclick="selectTask('task8')">HTML</button>
                 </div>
                 <div class="nav-button-container">
                     <p>JAVASCRIPT у веб-застосунку</p>
-                    <button class="nav-button" id="taskButton_task5" onclick="selectTask('task5')">HTML</button>
-                    <button class="nav-button" id="taskButton_task6" onclick="selectTask('task6')">JAVASCRIPT</button>
+                    <button class="nav-button" id="taskButton_task9" onclick="selectTask('task9')">HTML</button>
+                    <button class="nav-button" id="taskButton_task10" onclick="selectTask('task10')">JAVASCRIPT</button>
                 </div>
-                <button class="nav-button" id="taskButton_task7" onclick="selectTask('task7')">Висновки</button>
+                <button class="nav-button" id="taskButton_task11" onclick="selectTask('task11')">Висновки</button>
             </nav>
         </header>
         <hr class="splitter">
         <main class="main">
+            
             <section id="block_task1" style="display: none;">
                 <p>
                     <b>Тема: </b>
@@ -51,6 +59,54 @@
             </section>
 
             <section id="block_task2" style="display: none;">
+                <p>
+                    JavaScript можна використовувати для динамічного створення URL-адрес. Це можна зробити за допомогою 
+                    функції window.location.href. Наприклад, наступний код генерує URL-адресу для сторінки з ім'ям 
+                    page.html в поточному каталозі:
+                    <pre class="code">var url = window.location.href;
+url += "page.html";</pre>
+                </p>
+            </section>
+
+            <section id="block_task3" style="display: none;">
+                <p>
+                    JavaScript можна використовувати для обробки подій, таких як клік, наведення курсора миші або 
+                    завантаження веб-сторінки. Це можна зробити за допомогою обробників подій, які прив'язуються до 
+                    елементів DOM. Наприклад, наступний код прив'язує обробник подій до кнопки submit. Обробник подій 
+                    буде викликаний, коли користувач натисне кнопку:
+                    <pre class="code">var button = document.getElementById("submit");
+button.addEventListener("click", function() {
+  // Зробити щось
+});</pre>
+</p>
+            </section>
+
+            <section id="block_task4" style="display: none;">
+                <p>
+                    JavaScript можна використовувати для підстановки об'єктів в HTML-код. Це можна зробити за 
+                    допомогою функції document.querySelector(). Наприклад, наступний код підставляє об'єкт person в HTML-код, 
+                    який містить тег p:
+                    <pre class="code">var person = {
+  name: "John Doe",
+  age: 30
+};
+
+var p = document.querySelector("p");
+p.innerHTML = person.name + " is " + person.age + " years old";</pre>
+                </p>
+            </section>
+
+            <section id="block_task5" style="display: none;">
+                <p>
+                    JavaScript можна вставляти в HTML-код за допомогою тега script. Тег script може містити 
+                    код JavaScript, який буде виконаний браузером. Наприклад, наступний код вставляє код JavaScript в HTML-код:
+                    <pre class="code">&lt;script&gt;
+  // Код JavaScript
+&lt;/script&gt;</pre>
+                </p>
+            </section>
+
+            <section id="block_task6" style="display: none;">
                 <pre class="code">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -77,7 +133,7 @@
                 </p>
             </section>
 
-            <section id="block_task3" style="display: none;">
+            <section id="block_task7" style="display: none;">
                 <pre class="code">const input = document.querySelector('#input');
 const button = document.querySelector("#button");
 const result = document.querySelector('#result');
@@ -199,7 +255,7 @@ button.addEventListener("click", main);
                 </p>
             </section>
 
-            <section id="block_task4" style="display: none;">
+            <section id="block_task8" style="display: none;">
                 <pre class="code">&lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 &lt;head&gt;
@@ -227,7 +283,7 @@ button.addEventListener("click", main);
                 </p>
             </section>
 
-            <section id="block_task5" style="display: none;">
+            <section id="block_task9" style="display: none;">
                 <pre class="code">&lt;div class="search-wrapper"&gt;
     &lt;form class="search-form"&gt;
         &lt;input id="search" class="search-input" type="text" placeholder="Знайти:"&gt;
@@ -250,7 +306,7 @@ button.addEventListener("click", main);
                 </p>
             </section>
 
-            <section id="block_task6" style="display: none;">
+            <section id="block_task10" style="display: none;">
                 <pre class="code">const api = "data.json";
 
 const dishes = [];
@@ -313,7 +369,7 @@ searchInput.addEventListener('keyup', displayOptions);
                 </p>
             </section>
 
-            <section id="block_task7" style="display: none;">
+            <section id="block_task11" style="display: none;">
                 <p>
                     Під час цієї лабораторної роботи ми навчилися працювати з JAVASCRIPT, а саме: 
                     <ul>
