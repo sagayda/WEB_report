@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles-lab.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="head">
+            <nav class="nav">
+                <button class="nav-button" id="taskButton_task1" onclick="selectTask('task1')">Тема, мета, посилання</button>
+                <div class="nav-button-container">
+                    <p>Завдання 1</p>
+                    <button class="nav-button" id="taskButton_task2" onclick="selectTask('task2')">HTML</button>
+                    <button class="nav-button" id="taskButton_task3" onclick="selectTask('task3')">JAVASCRIPT</button>
+                </div>
+                <div class="nav-button-container">
+                    <p>Завдання 2</p>
+                    <button class="nav-button" id="taskButton_task4" onclick="selectTask('task4')">HTML</button>
+                </div>
+                <div class="nav-button-container">
+                    <p>JAVASCRIPT у веб-застосунку</p>
+                    <button class="nav-button" id="taskButton_task5" onclick="selectTask('task5')">HTML</button>
+                    <button class="nav-button" id="taskButton_task6" onclick="selectTask('task6')">JAVASCRIPT</button>
+                </div>
+                <button class="nav-button" id="taskButton_task7" onclick="selectTask('task7')">Висновки</button>
+            </nav>
+        </header>
+        <hr class="splitter">
+        <main class="main">
+            <section id="block_task1" style="display: none;">
+                <p>
+                    <b>Тема: </b>
+                    ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ. ВИКОРИСТАННЯ МАСИВІВ У JS-СЦЕНАРІЯХ. 
+                    РЕАЛІЗАЦІЯ ПРОГРАМ ЗАСОВАМИ МОВИ JAVASCRIPT
+                    <br>
+                    <br>
+                    <b>Мета: </b>
+                    придбати практичні навички роботи з масивами у js-сценаріях. Реалізація програм засовами мови JAVASCRIPT
+                    <br>
+                    <br>
+                    <b>Посилання: </b>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB" target="_blank">Сайт на Github</a>
+                    <br>
+                    <a class="white_link" href="https://github.com/sagayda/WEB_report" target="_blank">Звіт на Github</a>
+                </p>
+            </section>
+
+            <section id="block_task2" style="display: none;">
+                <pre class="code">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form style="display: flex; flex-direction: column;"&gt;
+        &lt;input id="input" type="text" style="width: 25em; margin: 0.25em 0; padding: 0; box-sizing: border-box;"&gt;
+        &lt;input id="button" type="button" style="width: 25em; margin: 0.25em 0; padding: 0; box-sizing: border-box;"&gt;
+        &lt;input type="date"&gt;
+    &lt;/form&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+
+    &lt;script src="code.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                <p>
+                    HTML-код завдання доволі простий та банальний: маємо звичайну стрінку з формою та блоком для виводу.
+                    Форма містить поле для вводу чисел та кнопку для виконання програми, що відмічені унікальними ID. 
+                    При натискаанні кнопки результат виводиться в блок з ID "result".
+                </p>
+            </section>
+
+            <section id="block_task3" style="display: none;">
+                <pre class="code">const input = document.querySelector('#input');
+const button = document.querySelector("#button");
+const result = document.querySelector('#result');
+
+function getNumbersArray() {
+    const inputValue = input.value;
+
+    const numbers = inputValue.split(",");
+
+    const numbersArray = numbers.map((number) => parseInt(number));
+
+    return numbersArray;
+}
+
+function getSum(numbersArray) {
+    const max = Math.max(...numbersArray);
+    const min = Math.min(...numbersArray);
+
+    var res = max;
+
+    numbersArray.forEach(element => {
+        if(element == min){
+            res += element;
+        }
+    });
+
+    return res;
+}
+
+function quickSort(numbersArray) {
+    if (numbersArray.length &lt;= 1) {
+      return numbersArray;
+    }
+  
+    const pivotIndex = Math.floor(Math.random() * numbersArray.length);
+    const pivot = numbersArray.splice(pivotIndex, 1);
+  
+    const smallerArray = numbersArray.filter((number) => number &lt; pivot);
+    const largerArray = numbersArray.filter((number) => number >= pivot);
+  
+    return quickSort(smallerArray).concat([pivot], quickSort(largerArray));
+  }
+
+function printHtml(text) {
+
+    const html = result.innerHTML + `&lt;p>${text}&lt;/p>`;
+
+    result.innerHTML = html;
+}
+
+function clearHtml() {
+    result.innerHTML = "";
+}
+
+function main() {
+    clearHtml();
+
+    const numbersArray = getNumbersArray();
+    printHtml(`Input array: ${numbersArray}`);
+
+    const sum = getSum(numbersArray);
+    printHtml([`Sum = ${sum}`]);
+
+    const sortedArray = quickSort(numbersArray);
+    printHtml(`Sorted array: ${sortedArray}`);
+}
+
+
+button.addEventListener("click", main);
+</pre>
+                <p>
+                    Спершу в коді було визначено константи для кнопки та блоку виводу, щоб не шукати їх кожного разу. 
+                    <br>
+                    Далі программа була розділена на 6 функцій:
+                    <ul>
+                        <li>
+                            <b>getNumbersArray()</b>
+                            <br>
+                            Ця функція виконує операцію зчитування даних з поля вводу. Алгоритм доволі простий: спочатку 
+                            ми отримуємо рядок з поля вводу, потім розділяємо його за комою на масив елементів, и потім кожен 
+                            елемент перетворюємо на число.
+                        </li>
+                        <br>
+                        <li>
+                            <b>getSum(numbersArray)</b>
+                            <br>
+                            Ця функція знаходить суму максимального та мінімальних значень масиву. В якості аргументу передається 
+                            масив чисел, далі функцією Math.max() ми знаходимо максимальне значення, а функцією Math.min() мінімальне. 
+                            Щоб включити всі мінімальні значення що повторюються ми перебераємо масив та додаємо до суми кожне число,
+                            що дорівнює мінімальному.
+                        </li>
+                        <br>
+                        <li>
+                            <b>quickSort()</b>
+                            <br>
+                            Ця функція, як можна здогадатися з назви, реалізує алгоритм швидкого сортування. Сам алгоритм є стандартним, 
+                            опорний елемент вибирається випадково.
+                        </li>
+                        <br>
+                        <li>
+                            <b>printHtml(text)</b>
+                            <br>
+                            Ця функція виконує вивід даних на html-сторінку. В якості аргументів вона приймає текст, який заключає в 
+                            тег &lt;p>, після чого додає його до вкладеного html-коду елемента з ID "result".
+                        </li>
+                        <br>
+                        <li>
+                            <b>clearHtml()</b>
+                            <br>
+                            Дуже коротка та проста функція - вона очищує весь вкладений html-код в блок виводу, тобто просто очищує вивід.
+                        </li>
+                        <br>
+                        <li>
+                            <b>main()</b>
+                            <br>
+                            Головна функція програми, виконує послідовний запуск інших функцій в правильному порядку після натискання кнопки.
+                        </li>
+                    </ul>
+                </p>
+            </section>
+
+            <section id="block_task4" style="display: none;">
+                <pre class="code">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form style="display: flex; flex-direction: column;"&gt;
+        &lt;input id="input" type="text" style="width: 25em; margin: 0.25em 0; padding: 0; box-sizing: border-box;"&gt;
+        &lt;input id="button" type="button" style="width: 25em; margin: 0.25em 0; padding: 0; box-sizing: border-box;"&gt;
+        &lt;input type="date"&gt;
+    &lt;/form&gt;
+    &lt;div id="result"&gt;&lt;/div&gt;
+
+    &lt;script src="code.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+                <p>
+                    Ціллю завдання 2 було зробити календар, що допомагав би вводити дату в поле вводу форми. Для цього в html 
+                    існує тип поля вводу "date", що повністю забезпечує потрібний функціонал та є більш надійним та зручним чим 
+                    "ручна" реалізація, оскільки він підтримується розробниками браузерів, синхронізується зі світовим часом та 
+                    вже має весь потрібний функціонал.                    
+                </p>
+            </section>
+
+            <section id="block_task5" style="display: none;">
+                <pre class="code">&lt;div class="search-wrapper"&gt;
+    &lt;form class="search-form"&gt;
+        &lt;input id="search" class="search-input" type="text" placeholder="Знайти:"&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</pre>
+                <p>
+                    Спочатку було створено пошукове поле, що знаходиться в основній частині сайту. Воно складається з форми та 
+                    має поле для вводу тексту.
+                    <br>
+                    <pre class="code">&lt;div class="search-results-block" &gt;
+    &lt;img class="search-results-image" src="${dishes.photos[0]}"&gt;
+    &lt;div class="search-results-text-block"&gt;
+        &lt;h1 class="search-results-name"&gt;${dishes.name}&lt;/h1&gt;
+        &lt;h3 class="search-results-desc"&gt;${dishes.description}&lt;/h3&gt;
+        &lt;h4 class="search-results-price"&gt;---$&lt;/h4&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+                    Далі було створено шаблон для результатів пошуку. Він представляє собою блок, який має зображення страви, 
+                    її опис та ціну. Посилання на зображення, назву та опис ми вказуємо за допомогою JAVASCRIPT.
+                </p>
+            </section>
+
+            <section id="block_task6" style="display: none;">
+                <pre class="code">const api = "data.json";
+
+const dishes = [];
+const searchInput = document.querySelector('#search');
+const searchResults = document.querySelector('#search-results');
+
+fetch(api)
+    .then(res =&gt; res.json())
+    .then(foods =&gt; {
+        for (const category of foods.categories) {
+            dishes.push(...category.foods);
+        }
+    });
+
+
+
+function findOptions(word, data){
+    return data.filter( s =&gt; {
+        const regexp = new RegExp(word, 'gi');
+        return s.name.match(regexp);
+    });
+}
+
+function displayOptions(){
+    const result = findOptions(this.value, dishes);
+
+    const html = result.map( dishes =&gt; {
+        return `&lt;div class="search-results-block" &gt;
+        &lt;img class="search-results-image" src="${dishes.photos[0]}"&gt;
+        &lt;div class="search-results-text-block"&gt;
+            &lt;h1 class="search-results-name"&gt;${dishes.name}&lt;/h1&gt;
+            &lt;h3 class="search-results-desc"&gt;${dishes.description}&lt;/h3&gt;
+            &lt;h4 class="search-results-price"&gt;---$&lt;/h4&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;`
+    }).slice(0, 5).join("");
+
+    searchResults.innerHTML = html;
+}
+
+
+searchInput.addEventListener('change', displayOptions);
+searchInput.addEventListener('keyup', displayOptions);
+
+</pre>
+                <p>
+                    Цей код реалізовує пошук та вивід страв за назвою.
+                    <br>
+                    <br>
+                    Перш за все ми отримуємо самі страви. Вони зберігаються в json-файлі в вигляді масиву, розділені за категоріями. 
+                    Це реалізовано за допомогою функції fetch().
+                    <br>
+                    <br>
+                    Далі виконується функція findOptions() для вибору тих страв, що задовільняють вказані умови пошуку. Порівняння 
+                    назв виконано за допомогою регулярних виразів.
+                    <br>
+                    <br>
+                    І в кінці ми виводимо отримані результати пошуку на html сторінку, вставляючи назву, опис, ціну та фото в шаблон та 
+                    поміщаючи ций шаблон в потрібний блок на сторінці.
+                </p>
+            </section>
+
+            <section id="block_task7" style="display: none;">
+                <p>
+                    Під час цієї лабораторної роботи ми навчилися працювати з JAVASCRIPT, а саме: 
+                    <ul>
+                        <li>Застосовувати JAVASCRIPT у HTML-документах</li>
+                        <li>Використовувати масиви у JAVASCRIPT для роботи з даними</li>
+                        <li>Створювати функції та розподіляти програму на них</li>
+                    </ul>
+                    Було створено міні-програму для сортування да сумування чисел масиву введеного з поля на HTML-сторінці а також 
+                    реалізовано пошук страв за назвою в веб-застосунку.
+                </p>
+            </section>
+            
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
