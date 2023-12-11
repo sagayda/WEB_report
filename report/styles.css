@@ -41,6 +41,7 @@ button {
     flex-direction: row;
     width: 100%;
     margin: 4px 0;
+    flex-wrap: wrap;
 }
 
 .button_selector button {
@@ -50,7 +51,7 @@ button {
     border-radius: 10px;
     cursor: pointer;
     background-color: #9C6F3D;
-    margin: 0 5px;
+    margin: 5px;
     padding: 0;
 }
 
