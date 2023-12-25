@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="styles-lab.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <header class="head">
+      <nav class="nav">
+        <button class="nav-button" id="taskButton_task1" onclick="selectTask('task1')">Тема, мета, посилання</button>
+        <div class="nav-button-container">
+          <p>Виконання завдань</p>
+          <button class="nav-button" id="taskButton_task2" onclick="selectTask('task2')">Завдання 2</button>
+          <button class="nav-button" id="taskButton_task3" onclick="selectTask('task3')">Завдання 4</button>
+          <button class="nav-button" id="taskButton_task4" onclick="selectTask('task4')">Завдання 6</button>
+          <button class="nav-button" id="taskButton_task5" onclick="selectTask('task5')">Завдання 7</button>
+          <button class="nav-button" id="taskButton_task6" onclick="selectTask('task6')">Завдання 8</button>
+          <button class="nav-button" id="taskButton_task7" onclick="selectTask('task7')">Завдання 9</button>
+          <button class="nav-button" id="taskButton_task8" onclick="selectTask('task8')">Завдання 10</button>
+        </div>
+        <button class="nav-button" id="taskButton_task9" onclick="selectTask('task9')">Висновки</button>
+      </nav>
+    </header>
+    <hr class="splitter">
+    <main class="main">
+
+      <section id="block_task1" style="display: none;">
+        <p>
+          <b>Тема: </b>
+          КЛАСИ. ОБ&#39;ЄКТНА МОДЕЛЬ ДОКУМЕНТА (DOM). ПОДІЇ. ОБ&#39;ЄКТ ПОДІЇ.
+          ДЕЛЕГУВАННЯ ПОДІЙ. THROTTLE. МОДУЛЬНОСТЬ КОДУ
+          <br>
+          <br>
+          <b>Мета: </b>
+          придбати практичні навички роботи з об&#39;єктами. Методи об&#39;єкта.
+          Callback. Стрілочні функції. Стрілочні функції як колбеки​.
+          Реалізація програм засовами мови JAVASCRIPT
+          <br>
+          <br>
+          <b>Посилання: </b>
+          <br>
+          <a class="white_link" href="https://github.com/sagayda/WEB" target="_blank">Сайт на Github</a>
+          <br>
+          <a class="white_link" href="https://github.com/sagayda/WEB_report" target="_blank">Звіт на Github</a>
+        </p>
+      </section>
+
+      <section id="block_task2" style="display: none;">
+        <p>
+          <b>Постановка задачі</b>
+          <br>
+          <br>
+          У звітному HTML-документі створити html-розміту,
+          яка складається з наступних елементів : текст, кнопка,
+          два інпута (поля введення ).
+          <br>
+          Після натискання кнопки &quot;SWAP ME&quot; здійснюється
+          обмін вмістом між двома інпутами.
+          Ви можете натиснути на неї кілька разів або вручну
+          змінити вміст інпутів.
+          <br>
+          <br>
+          <b>Виконання</b>
+          <br>
+        <pre class="code">const input1 = document.getElementById("input1");
+const input2 = document.getElementById("input2");
+const swapButton = document.getElementById("button");
+
+function swapInputs(input1, input2) {
+  // Отримати поточний вміст інпутів
+  const input1Value = input1.value;
+  const input2Value = input2.value;
+
+  // Обміняти вміст інпутів
+  input1.value = input2Value;
+  input2.value = input1Value;
+}
+
+swapButton.addEventListener("click", () => {
+    swapInputs(input1, input2);
+  });</pre>
+        </p>
+      </section>
+
+      <section id="block_task3" style="display: none;">
+        <p>
+          <b>Постановка задачі</b>
+          <br>
+          <br>
+          У звітному HTML-документі створити html-розміту,
+          яка складається з наступних елементів : текст, блок
+          (div), дві кнопки
+          <br>
+          Кнопка &quot;Зменшити&quot; робить квадрат менше на 15
+          пікселів.
+          Повторний натиск на кнопці Зменшити&quot;   робить
+          квадрат ще менше на 15 пікселів.
+          &quot;Збільшити&quot; – робить квадрат більше на 15 пікселів.
+          Повторний натиск на кнопці &quot;Зменшити&quot;   робить
+          квадрат ще більше на 15 пікселів.
+          <br>
+          <br>
+        <b>Виконання</b>
+        <br>
+        <pre class="code">const increaseButton = document.getElementById("button1");
+const decreaseButton = document.getElementById("button2");
+const box = document.getElementById("box");
+
+function increase() {
+    const width = box.offsetWidth;
+    const height = box.offsetHeight;
+  
+    box.style.width = `${width + 15}px`;
+    box.style.height = `${height + 15}px`;
+}
+
+function decrease() {
+  const width = box.offsetWidth;
+  const height = box.offsetHeight;
+
+
+  box.style.width = `${width - 15}px`;
+  box.style.height = `${height - 15}px`;
+}
+
+increaseButton.addEventListener("click", increase);
+decreaseButton.addEventListener("click", decrease);</pre>
+        </p>
+      </section>
+
+      <section id="block_task4" style="display: none;">
+        <p>
+          <b>Постановка задачі</b>
+          <br>
+          <br>
+          У звітному HTML-документі створити html-розміту,
+          яка складається з наступних елементів : текст,
+          маркирований список.
+          <br>
+          Натиснувши кнопку &quot;Подвоїти&quot;, збільшити значення
+          у кожному елементі списку у 2 рази. Повторний натиск
+          на кнопці &quot;Подвоїти&quot;, також збільшить значення у
+          кожному елементі списку у 2 рази
+          <br>
+          <br>
+        <b>Виконання</b>
+        <br>
+        <pre class="code">const doubleButton = document.getElementById("button");
+const list = document.getElementById("list");
+
+function double() {
+  for (const li of list.children) {
+    var number = parseInt(li.textContent);
+    number *= 2;
+    li.textContent = number;
+  }
+
+}
+
+doubleButton.addEventListener("click", double);</pre>
+        </p>
+      </section>
+
+      <section id="block_task5" style="display: none;">
+        <p>
+          <b>Постановка задачі</b>
+          <br>
+          <br>
+          TML містить список категорій ul#categories.
+          <br>
+        <pre>&lt;ul id=&quot;categories&quot;&gt;
+&lt;li class=&quot;item&quot;&gt;
+&lt;h2&gt;Animals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Cat&lt;/li&gt;
+&lt;li&gt;Hamster&lt;/li&gt;
+&lt;li&gt;Horse&lt;/li&gt;
+&lt;li&gt;Parrot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class=&quot;item&quot;&gt;
+
+Всі
+непарні та
+парні
+номери за
+списком
+групи
+
+&lt;h2&gt;Products&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bread&lt;/li&gt;
+&lt;li&gt;Prasley&lt;/li&gt;
+&lt;li&gt;Cheese&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li class=&quot;item&quot;&gt;
+&lt;h2&gt;Technologies&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+&lt;li&gt;React&lt;/li&gt;
+&lt;li&gt;Node.js&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</pre>
+        <br>
+        Напиши скрипт, який:
+1. Порахує і виведе в консоль кількість категорій
+в ul#categories, тобто елементів li.item.
+2. Для кожного элемента li.item у
+списку ul#categories, знайде і виведе в консоль
+текст заголовку елемента (тегу &lt;h2&gt;) і кількість
+елементів в категорії (усіх &lt;li&gt;, вкладених в
+нього).
+Для виконання цього завдання потрібно використати
+метод forEach() і властивості навігації по DOM.
+        <br>
+        <b>Виконання</b>
+        <br>
+        <pre class="code">const categories = document.querySelector("#categories");
+
+function logCategories() {
+
+  const numberOfCategories = categories.querySelectorAll(".item").length;
+  console.log("Categories count:", numberOfCategories);
+
+  categories.querySelectorAll(".item").forEach((item) => {
+    const headerText = item.querySelector("h2").textContent;
+
+    const numberOfItems = item.querySelectorAll("li").length;
+
+    console.log(`Category: ${headerText}. Category elements count: ${numberOfItems}`);
+  });
+}</pre>
+        </p>
+      </section>
+
+      <section id="block_task6" style="display: none;">
+        <p>
+          <b>Постановка задачі</b>
+          <br>
+          <br>
+          Напиши скрипт управління формою логіна.
+          <br>
+        <pre>&lt;form class=&quot;login-form&quot;&gt;
+&lt;label&gt;
+Email
+&lt;input type=&quot;email&quot; name=&quot;email&quot; /&gt;
+&lt;/label&gt;
+&lt;label&gt;
+Password
+
+Всі
+непарні та
+парні
+номери за
+списком
+групи
+
+&lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+&lt;/label&gt;
+&lt;button type=&quot;submit&quot;&gt;Log in&lt;/button&gt;
+&lt;/form&gt;</pre>
+        <br>
+        <ul>
+          <li>Обробка відправлення форми form.login-
+            form повинна відбуватися за подією submit.</li>
+            <li>Під час відправлення форми сторінка не повинна
+              перезавантажуватися.</li>
+            <li>Якщо при сабміті у формі є незаповнені поля,
+              виводь alert з попередженням про те, що &#39;All
+              form fields must be filled in&#39;. Не
+              додавай на інпути атрибут required, валідація має
+              відбуватися саме через JS.</li>
+              <li>Якщо користувач заповнив усі поля і відправив
+                форму, збери значення полів в об&#39;єкт з двома
+                властивостями, де ключ — це ім&#39;я інпутів, а
+                значення — відповідні значення цих інпутів,
+                очищені від пробілів по краях. Для доступу до
+                елементів форми використовуй
+                властивість elements.</li>
+                <li>При сабміті форми виведи об&#39;єкт із введеними
+                  даними в консоль і очисти значення полів форми
+                  методом reset.</li>
+        </ul>
+        <br>
+        <b>Виконання</b>
+        <br>
+        <pre class="code">const loginForm = document.querySelector(".login-form");
+
+loginForm.addEventListener("submit", (event) => {
+  // Заглушити перевантаження сторінки
+  event.preventDefault();
+
+  const inputs = loginForm.querySelectorAll("input");
+  const filledInputs = [];
+  for (const input of inputs) {
+    if (input.value !== "") {
+      filledInputs.push(input);
+    }
+  }
+  if (filledInputs.length !== inputs.length) {
+    alert("All form fields must be filled in");
+    return;
+  }
+
+  const data = {};
+  for (const input of filledInputs) {
+    data[input.name] = input.value.trim();
+  }
+
+  console.log(data);
+
+  loginForm.reset();
+});</pre>
+        </p>
+      </section>
+
+      <section id="block_task7" style="display: none;">
+        <p>
+          <b>Постановка задачі</b>
+          <br>
+          <br>
+          Напиши скрипт, який змінює колір фону
+елемента &lt;body&gt; через інлайн-стиль по кліку
+на button.change-color і задає це значення
+кольору текстовим вмістом для span.color.
+          <br>
+          <pre class="code">&lt;div class=&quot;widget&quot;&gt;
+&lt;p&gt;Background color: &lt;span
+class=&quot;color&quot;&gt;-&lt;/span&gt;&lt;/p&gt;
+&lt;button type=&quot;button&quot; class=&quot;change-
+color&quot;&gt;Change color&lt;/button&gt;
+&lt;/div&gt;</pre>
+          <br>
+          Для генерування випадкового кольору використовуй
+функцію getRandomHexColor().
+          <br>
+          <pre class="code">function getRandomHexColor() {
+return `#${Math.floor(Math.random() *
+16777215)
+.toString(16)
+.padStart(6, 0)}`;
+}</pre>
+          <br>
+          <br>
+          <b>Виконання</b>
+          <br>
+        <pre class="code">function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}
+
+const body = document.querySelector("body");
+const colorSpan = document.querySelector(".color");
+const changeColorButton = document.querySelector(".change-color");
+
+function changeColor() {
+  const newColor = getRandomHexColor();
+  body.style.backgroundColor = newColor;
+  colorSpan.textContent = newColor;
+}
+
+changeColorButton.addEventListener("click", changeColor);
+</pre>
+        </p>
+      </section>
+
+      <section id="block_task8" style="display: none;">
+        <p>
+          <b>Постановка задачі</b>
+          <br>
+          <br>
+          Напиши скрипт створення й очищення колекції
+          елементів з наступним функціоналом.
+          Є input, у який користувач вводить бажану кількість
+          елементів. Після натискання на кнопку Create має
+          рендеритися (додаватися в DOM) колекція з
+          відповідною кількістю елементів і очищатися значення
+          в інпуті. При повторному натисканні на
+          кнопку Create поверх старої колекції має рендеритись
+          нова. Після натискання на кнопку Destroy колекція
+          елементів має очищатися.
+          <br>
+          <pre class="code">&lt;div id=&quot;controls&quot;&gt;
+&lt;input type=&quot;number&quot; min=&quot;1&quot; max=&quot;100&quot;
+step=&quot;1&quot; /&gt;
+&lt;button type=&quot;button&quot; data-
+create&gt;Create&lt;/button&gt;
+&lt;button type=&quot;button&quot; data-
+destroy&gt;Destroy&lt;/button&gt;
+&lt;/div&gt;
+&lt;div id=&quot;boxes&quot;&gt;&lt;/div&gt;</pre>
+          <br>
+          Після натискання користувачем на
+кнопку Create треба провалідувати значення в input,
+воно має бути в межах від 1 до 100 включно. Тільки
+якщо воно задоволяє умову, мають додаватися
+нові &lt;div&gt; елементи в DOM.
+Для рендеру елементів на сторінці створи
+функцію createBoxes(amount), яка приймає один
+параметр — число, що зберігає кількість елементів для
+рендеру. Функція має створювати
+стільки &lt;div&gt; елементів, скільки вказано
+в параметрі amount і додавати їх у DOM дочірніми
+елементами для div#boxes.
+          <br>
+          <ul>
+            <li>Розміри першого &lt;div&gt; елемента мають бути
+              30px на 30px.</li>
+              <li>Кожен наступний елемент повинен бути ширшим
+
+                Всі
+                непарні та
+                парні
+                номери за
+                списком
+                групи
+                
+                і вищим від попереднього на 10px.</li>
+                <li>Усі елементи повинні мати випадковий колір
+                  фону. Використовуй готову
+                  функцію getRandomHexColor() для отримання
+                  випадкового кольору.</li>
+          </ul>
+          <br>
+          <pre class="code">function getRandomHexColor() {
+return `#${Math.floor(Math.random() *
+16777215)
+.toString(16)
+.padStart(6, 0)}`;
+}</pre>
+          <br>
+          Для очищення колекції після натискання на
+кнопку Destroy створи функцію destroyBoxes(), яка
+очищає вміст div#boxes, у такий спосіб видаляючи всі
+створені елементи.
+          <br>
+          <br>
+          <b>Виконання</b>
+          <br>
+        <pre class="code">function getRandomHexColor() {
+          return `#${Math.floor(Math.random() * 16777215)
+            .toString(16)
+            .padStart(6, 0)}`;
+        }
+        
+        function createBoxes(amount) {
+          const boxes = [];
+          var size = 30;
+        
+          for (let i = 1; i <= amount; i++) {
+            const color = getRandomHexColor();
+            const box = document.createElement("div");
+            box.style.width = size + "px";
+            box.style.height = size + "px";
+            box.style.backgroundColor = color;
+            boxes.push(box);
+            size += 10;
+          }
+        
+          const boxContainer = document.getElementById("boxes");
+        
+          boxes.forEach(box => {
+            boxContainer.appendChild(box);
+          });
+        }
+        
+        const controls = document.getElementById("controls");
+        const createButton = controls.querySelector("button[data-create]");
+        const destroyButton = controls.querySelector("button[data-destroy]");
+        
+        createButton.addEventListener("click", () => {
+          const input = controls.querySelector("input");
+          const amount = parseInt(input.value);
+          if (amount >= 1 && amount <= 100) {
+            createBoxes(amount);
+            input.value = "";
+          }
+        });
+        
+        destroyButton.addEventListener("click", () => {
+          document.getElementById("boxes").innerHTML = "";
+        });</pre>
+        </p>
+      </section>
+
+      <section id="block_task9" style="display: none;">
+        <p>
+          Під час цієї лабораторної роботи ми навчилися працювати з JAVASCRIPT, а саме:
+        <ul>
+          <li>Застосовувати стрілочні функції</li>
+          <li>Використовувати об'єкти у JAVASCRIPT для роботи з даними</li>
+          <li>Створювати методи об'єктів та розширювати їх функціонал</li>
+        </ul>
+        Було створено 6 міні-програм відповідно до варіанту. Всі програми протестовані та працюють коректно.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
