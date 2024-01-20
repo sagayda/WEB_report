@@ -23,7 +23,7 @@ function selectLab(lab)
     pressedButton.disabled = true;
 
     var iframe = document.getElementById('labFrame');
-    iframe.src = 'https://sagayda.github.io/WEB_report/report/' lab + '.html';
+    iframe.src = 'https://sagayda.github.io/WEB_report/report/' + lab + '.html';
 }
 
 function selectTask(task)
